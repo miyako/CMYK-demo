@@ -1,0 +1,638 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"windowMinWidth": 1240,
+	"windowMinHeight": 946,
+	"windowMaxWidth": 1240,
+	"windowMaxHeight": 946,
+	"rightMargin": 28,
+	"bottomMargin": 28,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"windowTitle": "CMYK Lab",
+	"destination": "detailScreen",
+	"method": "method.4dm",
+	"formClass": "CMYKLab",
+	"pages": [
+		{
+			"objects": {
+				"Backdrop": {
+					"type": "rectangle",
+					"left": 0,
+					"top": 0,
+					"width": 1240,
+					"height": 946,
+					"fill": "#F6F7F9",
+					"stroke": "#DDE2E8",
+					"strokeWidth": 0
+				}
+			}
+		},
+		{
+			"objects": {
+				"Title": {
+					"type": "text",
+					"left": 28,
+					"top": 20,
+					"width": 520,
+					"height": 38,
+					"text": "CMYK Lab",
+					"class": "title",
+					"fontSize": 26,
+					"fontWeight": "bold"
+				},
+				"Subtitle": {
+					"type": "text",
+					"left": 28,
+					"top": 60,
+					"width": 780,
+					"height": 22,
+					"text": "An interactive harness for miyako/CMYK — ICC-managed RGB to CMYK conversion through a bundled system worker.",
+					"class": "subtitle"
+				},
+				"Version": {
+					"type": "input",
+					"left": 860,
+					"top": 22,
+					"width": 352,
+					"height": 20,
+					"dataSource": "Form.componentVersion",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"textAlign": "right",
+					"class": "meta"
+				},
+				"SourceGroup": {
+					"type": "groupBox",
+					"left": 28,
+					"top": 96,
+					"width": 568,
+					"height": 182,
+					"text": "1 · Source image",
+					"class": "group"
+				},
+				"SourceLabel": {
+					"type": "text",
+					"left": 44,
+					"top": 124,
+					"width": 96,
+					"height": 18,
+					"text": "Source file",
+					"class": "label"
+				},
+				"SourcePath": {
+					"type": "input",
+					"left": 140,
+					"top": 120,
+					"width": 320,
+					"height": 24,
+					"dataSource": "Form.sourcePath",
+					"dataSourceTypeHint": "text",
+					"class": "path"
+				},
+				"ChooseSource": {
+					"type": "button",
+					"left": 468,
+					"top": 120,
+					"width": 112,
+					"height": 24,
+					"text": "Choose…",
+					"method": "ObjectMethods/ChooseSource.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"InspectSource": {
+					"type": "button",
+					"left": 468,
+					"top": 150,
+					"width": 112,
+					"height": 24,
+					"text": "Inspect",
+					"method": "ObjectMethods/InspectSource.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"SourceInfo": {
+					"type": "input",
+					"left": 44,
+					"top": 180,
+					"width": 536,
+					"height": 84,
+					"dataSource": "Form.sourceInfo",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"multiline": "yes",
+					"wordwrap": "normal",
+					"class": "note"
+				},
+				"ProfileGroup": {
+					"type": "groupBox",
+					"left": 28,
+					"top": 290,
+					"width": 568,
+					"height": 200,
+					"text": "2 · Destination profile",
+					"class": "group"
+				},
+				"ProfileLabel": {
+					"type": "text",
+					"left": 44,
+					"top": 318,
+					"width": 100,
+					"height": 18,
+					"text": "Destination ICC",
+					"class": "label"
+				},
+				"ProfilePath": {
+					"type": "input",
+					"left": 150,
+					"top": 314,
+					"width": 306,
+					"height": 24,
+					"dataSource": "Form.profilePath",
+					"dataSourceTypeHint": "text",
+					"class": "path"
+				},
+				"ChooseProfile": {
+					"type": "button",
+					"left": 468,
+					"top": 314,
+					"width": 112,
+					"height": 24,
+					"text": "Choose…",
+					"method": "ObjectMethods/ChooseProfile.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"SourceProfileLabel": {
+					"type": "text",
+					"left": 44,
+					"top": 348,
+					"width": 100,
+					"height": 18,
+					"text": "Source ICC",
+					"class": "label"
+				},
+				"SourceProfilePath": {
+					"type": "input",
+					"left": 150,
+					"top": 344,
+					"width": 306,
+					"height": 24,
+					"dataSource": "Form.sourceProfilePath",
+					"dataSourceTypeHint": "text",
+					"class": "path"
+				},
+				"ChooseSourceProfile": {
+					"type": "button",
+					"left": 468,
+					"top": 344,
+					"width": 112,
+					"height": 24,
+					"text": "Choose…",
+					"method": "ObjectMethods/ChooseSourceProfile.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"ProfileInfo": {
+					"type": "input",
+					"left": 44,
+					"top": 376,
+					"width": 406,
+					"height": 24,
+					"dataSource": "Form.profileInfo",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"class": "note"
+				},
+				"ClearSourceProfile": {
+					"type": "button",
+					"left": 468,
+					"top": 374,
+					"width": 112,
+					"height": 24,
+					"text": "Clear source",
+					"method": "ObjectMethods/ClearSourceProfile.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"OptionsGroup": {
+					"type": "groupBox",
+					"left": 28,
+					"top": 502,
+					"width": 568,
+					"height": 150,
+					"text": "3 · Output options",
+					"class": "group"
+				},
+				"BPC": {
+					"type": "checkbox",
+					"left": 44,
+					"top": 530,
+					"width": 320,
+					"height": 22,
+					"text": "Black point compensation",
+					"dataSource": "Form.blackPointCompensation",
+					"dataSourceTypeHint": "boolean",
+					"class": "check"
+				},
+				"AssumeSRGB": {
+					"type": "checkbox",
+					"left": 44,
+					"top": 556,
+					"width": 420,
+					"height": 22,
+					"text": "Assume sRGB when the source has no embedded profile",
+					"dataSource": "Form.allowAssumeSRGB",
+					"dataSourceTypeHint": "boolean",
+					"class": "check"
+				},
+				"IntentLabel": {
+					"type": "text",
+					"left": 44,
+					"top": 592,
+					"width": 54,
+					"height": 18,
+					"text": "Intent",
+					"class": "label"
+				},
+				"Intent": {
+					"type": "dropdown",
+					"left": 104,
+					"top": 588,
+					"width": 206,
+					"height": 24,
+					"dataSource": "Form.intent",
+					"dataSourceTypeHint": "text",
+					"choiceList": [
+						"relativeColorimetric",
+						"perceptual",
+						"saturation",
+						"absoluteColorimetric"
+					],
+					"saveAs": "value",
+					"class": "choice"
+				},
+				"FormatLabel": {
+					"type": "text",
+					"left": 334,
+					"top": 592,
+					"width": 56,
+					"height": 18,
+					"text": "Format",
+					"class": "label"
+				},
+				"Format": {
+					"type": "dropdown",
+					"left": 394,
+					"top": 588,
+					"width": 96,
+					"height": 24,
+					"dataSource": "Form.format",
+					"dataSourceTypeHint": "text",
+					"choiceList": [
+						"tiff",
+						"jpeg"
+					],
+					"saveAs": "value",
+					"class": "choice"
+				},
+				"QualityLabel": {
+					"type": "text",
+					"left": 502,
+					"top": 592,
+					"width": 54,
+					"height": 18,
+					"text": "Quality",
+					"class": "label"
+				},
+				"Quality": {
+					"type": "input",
+					"left": 560,
+					"top": 588,
+					"width": 48,
+					"height": 24,
+					"dataSource": "Form.quality",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "right",
+					"class": "path"
+				},
+				"QualityStepper": {
+					"type": "stepper",
+					"left": 612,
+					"top": 584,
+					"width": 16,
+					"height": 32,
+					"dataSource": "Form.quality",
+					"dataSourceTypeHint": "integer",
+					"min": 1,
+					"max": 100,
+					"step": 1
+				},
+				"RunGroup": {
+					"type": "groupBox",
+					"left": 28,
+					"top": 664,
+					"width": 568,
+					"height": 116,
+					"text": "4 · Run",
+					"class": "group"
+				},
+				"Convert": {
+					"type": "button",
+					"left": 44,
+					"top": 692,
+					"width": 180,
+					"height": 34,
+					"text": "Convert → CMYK",
+					"method": "ObjectMethods/Convert.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"defaultButton": true
+				},
+				"CopyJSON": {
+					"type": "button",
+					"left": 236,
+					"top": 692,
+					"width": 120,
+					"height": 26,
+					"text": "Copy JSON",
+					"method": "ObjectMethods/CopyJSON.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"RevealOutput": {
+					"type": "button",
+					"left": 366,
+					"top": 692,
+					"width": 140,
+					"height": 26,
+					"text": "Reveal output",
+					"method": "ObjectMethods/RevealOutput.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"Status": {
+					"type": "input",
+					"left": 44,
+					"top": 738,
+					"width": 536,
+					"height": 30,
+					"dataSource": "Form.status",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"class": "status"
+				},
+				"PreviewGroup": {
+					"type": "groupBox",
+					"left": 628,
+					"top": 96,
+					"width": 584,
+					"height": 354,
+					"text": "5 · Preview",
+					"class": "group"
+				},
+				"SourcePreviewLabel": {
+					"type": "text",
+					"left": 644,
+					"top": 124,
+					"width": 240,
+					"height": 18,
+					"text": "Source (RGB)",
+					"class": "label"
+				},
+				"OutputPreviewLabel": {
+					"type": "text",
+					"left": 944,
+					"top": 124,
+					"width": 250,
+					"height": 18,
+					"text": "Output (CMYK)",
+					"class": "label"
+				},
+				"SourcePreview": {
+					"type": "input",
+					"left": 644,
+					"top": 146,
+					"width": 284,
+					"height": 240,
+					"dataSource": "Form.sourcePicture",
+					"dataSourceTypeHint": "picture",
+					"enterable": false,
+					"class": "preview",
+					"pictureFormat": "proportionalCenter"
+				},
+				"OutputPreview": {
+					"type": "input",
+					"left": 944,
+					"top": 146,
+					"width": 252,
+					"height": 240,
+					"dataSource": "Form.outputPicture",
+					"dataSourceTypeHint": "picture",
+					"enterable": false,
+					"class": "preview",
+					"pictureFormat": "proportionalCenter"
+				},
+				"OutputInfo": {
+					"type": "input",
+					"left": 644,
+					"top": 392,
+					"width": 552,
+					"height": 24,
+					"dataSource": "Form.outputInfo",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"class": "note"
+				},
+				"PreviewHint": {
+					"type": "text",
+					"left": 644,
+					"top": 418,
+					"width": 552,
+					"height": 21,
+					"text": "4D decodes the CMYK TIFF through the OS imaging stack: a quick visual check, not a colorimetric soft proof.",
+					"class": "hint"
+				},
+				"ResultGroup": {
+					"type": "groupBox",
+					"left": 628,
+					"top": 462,
+					"width": 584,
+					"height": 266,
+					"text": "6 · Result",
+					"class": "group"
+				},
+				"ResultRows": {
+					"type": "listbox",
+					"left": 644,
+					"top": 490,
+					"width": 552,
+					"height": 156,
+					"listboxType": "collection",
+					"dataSource": "Form.resultRows",
+					"rowHeight": "20px",
+					"verticalAlign": "middle",
+					"resizingMode": "legacy",
+					"selectionMode": "single",
+					"showHeaders": true,
+					"headerHeight": "22px",
+					"columns": [
+						{
+							"name": "Key",
+							"dataSource": "This.name",
+							"width": 150,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"minWidth": 80
+						},
+						{
+							"name": "Value",
+							"dataSource": "This.value",
+							"width": 380,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"minWidth": 120
+						}
+					]
+				},
+				"Warnings": {
+					"type": "input",
+					"left": 644,
+					"top": 656,
+					"width": 552,
+					"height": 56,
+					"dataSource": "Form.warningsText",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"multiline": "yes",
+					"wordwrap": "normal",
+					"class": "warning"
+				},
+				"ScenarioGroup": {
+					"type": "groupBox",
+					"left": 628,
+					"top": 740,
+					"width": 584,
+					"height": 186,
+					"text": "7 · Scenarios",
+					"class": "group"
+				},
+				"ScenariosList": {
+					"type": "listbox",
+					"left": 644,
+					"top": 768,
+					"width": 368,
+					"height": 144,
+					"listboxType": "collection",
+					"dataSource": "Form.scenarioRows",
+					"rowHeight": "22px",
+					"verticalAlign": "middle",
+					"resizingMode": "legacy",
+					"selectionMode": "single",
+					"currentItemSource": "Form.selectedScenario",
+					"showHeaders": true,
+					"headerHeight": "22px",
+					"columns": [
+						{
+							"name": "Scenario",
+							"dataSource": "This.name",
+							"width": 170,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"minWidth": 100
+						},
+						{
+							"name": "Expect",
+							"dataSource": "This.expect",
+							"width": 90,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"minWidth": 60
+						},
+						{
+							"name": "Got",
+							"dataSource": "This.actual",
+							"width": 90,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"minWidth": 60
+						}
+					]
+				},
+				"RunSelected": {
+					"type": "button",
+					"left": 1024,
+					"top": 768,
+					"width": 168,
+					"height": 26,
+					"text": "Run selected",
+					"method": "ObjectMethods/RunSelected.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"RunAll": {
+					"type": "button",
+					"left": 1024,
+					"top": 800,
+					"width": 168,
+					"height": 26,
+					"text": "Run all scenarios",
+					"method": "ObjectMethods/RunAll.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"ResetScenarios": {
+					"type": "button",
+					"left": 1024,
+					"top": 832,
+					"width": 168,
+					"height": 26,
+					"text": "Reset table",
+					"method": "ObjectMethods/ResetScenarios.4dm",
+					"events": [
+						"onClick"
+					],
+					"style": "regular"
+				},
+				"ScenarioSummary": {
+					"type": "input",
+					"left": 644,
+					"top": 918,
+					"width": 368,
+					"height": 20,
+					"dataSource": "Form.scenarioSummary",
+					"dataSourceTypeHint": "text",
+					"enterable": false,
+					"class": "note"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,34 @@
+name: static
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Project JSON parses
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          paths = [p for p in pathlib.Path("Project").rglob("*") if p.suffix in {".4DProject", ".json"}]
+          for path in sorted(paths):
+              if "DerivedData" in path.parts:
+                  continue
+              json.loads(path.read_text(encoding="utf-8"))
+              print("ok", path)
+          PY
+      - name: Form geometry
+        run: python3 scripts/check_layout.py
+      - name: Form bindings
+        run: |
+          python3 scripts/check_bindings.py \
+            --class Project/Sources/Classes/CMYKLab.4dm \
+            --form Project/Sources/Forms/Lab/form.4DForm

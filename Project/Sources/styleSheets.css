@@ -1,0 +1,113 @@
+/* CMYK Lab — global stylesheet (all platforms).
+   4D CSS uses 4D form-object property names: fill, stroke, fontSize,
+   fontWeight, textAlign, borderStyle. Hex colours are #RRGGBB only. */
+
+.title {
+	fontSize: 26;
+	fontWeight: bold;
+	stroke: #17212B;
+}
+
+.subtitle {
+	fontSize: 12;
+	stroke: #55606D;
+}
+
+.meta {
+	fontSize: 11;
+	stroke: #6B7787;
+	textAlign: right;
+}
+
+.label {
+	fontSize: 12;
+	stroke: #39424E;
+}
+
+.group {
+	fontSize: 12;
+	fontWeight: bold;
+	stroke: #26313D;
+}
+
+.path {
+	fontSize: 12;
+	stroke: #17212B;
+}
+
+.choice {
+	fontSize: 12;
+	stroke: #17212B;
+}
+
+.check {
+	fontSize: 12;
+	stroke: #39424E;
+}
+
+.note {
+	fontSize: 11;
+	stroke: #55606D;
+}
+
+.hint {
+	fontSize: 10;
+	stroke: #77838F;
+}
+
+.status {
+	fontSize: 13;
+	fontWeight: bold;
+	stroke: #0E3A4C;
+}
+
+.warning {
+	fontSize: 11;
+	stroke: #7A4A00;
+}
+
+.preview {
+	fill: #FFFFFF;
+	borderStyle: plain;
+}
+
+@media (prefers-color-scheme: dark) {
+	#Backdrop {
+		fill: #12161B;
+		stroke: #232B34;
+	}
+
+	.title {
+		stroke: #F1F5F9;
+	}
+
+	.subtitle,
+	.note,
+	.label,
+	.check,
+	.choice,
+	.path {
+		stroke: #B4BEC9;
+	}
+
+	.meta,
+	.hint {
+		stroke: #8D99A6;
+	}
+
+	.group {
+		stroke: #DCE3EA;
+	}
+
+	.status {
+		stroke: #7FD1EA;
+	}
+
+	.warning {
+		stroke: #F0B860;
+	}
+
+	.preview {
+		fill: #1A2027;
+	}
+}

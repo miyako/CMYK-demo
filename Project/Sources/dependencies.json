@@ -1,0 +1,9 @@
+{
+  "version": 2100,
+  "dependencies": {
+    "CMYK": {
+      "github": "miyako/CMYK",
+      "tag": "0.1.2"
+    }
+  }
+}
