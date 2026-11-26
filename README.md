@@ -12,12 +12,13 @@ The component is pinned to **0.1.2** in `Project/Sources/dependencies.json`, so
 the 4D IDE installs it through the Dependency Manager like any other component.
 No source from `miyako/CMYK` is copied into this repository.
 
-![Lab form, classic light theme](Documentation/lab-form-light.png)
+![Lab form, light appearance](Documentation/lab-form-light.png)
+![Lab form, dark appearance](Documentation/lab-form-dark.png)
 
-> The images in `Documentation/` are static `fourdform` renders of the form JSON
-> (the 4D layout, not a runtime capture). Widget contents there are placeholders;
-> text styling comes from `Project/Sources/styleSheets.css` at runtime and is not
-> necessarily reflected in these renders.
+> The images in `Documentation/` are runtime captures: 4D 21.2 hosts the `Lab`
+> form with `DIALOG`, applies `styleSheets.css` for each colour scheme, and
+> `FORM SCREENSHOT` saves it after the first conversion has run (see the
+> `dialog_screenshot` chain in the `4dcli` skill).
 
 ## What it demonstrates
 
