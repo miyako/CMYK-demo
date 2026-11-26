@@ -397,13 +397,21 @@ Function _fillResult($result : Object)
 		End if
 		Case of
 			: (Value type($value.width)=Is real)
+				// Inspection results carry bitDepth/orientation/dpi; conversion
+				// results do not, so only list what the component returned.
 				This._addRow("size"; String($value.width)+" × "+String($value.height))
 				This._addRow("channels"; String($value.channels))
 				This._addRow("colorSpace"; String($value.colorSpace))
-				This._addRow("bitDepth"; String($value.bitDepth))
+				If (Value type($value.bitDepth)=Is real)
+					This._addRow("bitDepth"; String($value.bitDepth))
+				End if
 				This._addRow("format"; String($value.format))
-				This._addRow("orientation"; String($value.orientation))
-				This._addRow("dpi"; String($value.dpiX)+" × "+String($value.dpiY))
+				If (Value type($value.orientation)=Is real)
+					This._addRow("orientation"; String($value.orientation))
+				End if
+				If ((Value type($value.dpiX)=Is real) && (Value type($value.dpiY)=Is real))
+					This._addRow("dpi"; String($value.dpiX)+" × "+String($value.dpiY))
+				End if
 				If (Value type($value.sourceProfile)=Is object)
 					This._addRow("sourceProfile"; String($value.sourceProfile.origin)+" · "+String($value.sourceProfile.description))
 				End if

@@ -544,9 +544,9 @@
 				"ScenariosList": {
 					"type": "listbox",
 					"left": 644,
-					"top": 768,
-					"width": 368,
-					"height": 144,
+					"top": 802,
+					"width": 552,
+					"height": 112,
 					"listboxType": "collection",
 					"dataSource": "Form.scenarioRows",
 					"rowHeight": "22px",
@@ -560,7 +560,7 @@
 						{
 							"name": "Scenario",
 							"dataSource": "This.name",
-							"width": 170,
+							"width": 250,
 							"truncateMode": "none",
 							"verticalAlign": "middle",
 							"minWidth": 100
@@ -568,7 +568,7 @@
 						{
 							"name": "Expect",
 							"dataSource": "This.expect",
-							"width": 90,
+							"width": 150,
 							"truncateMode": "none",
 							"verticalAlign": "middle",
 							"minWidth": 60
@@ -576,7 +576,7 @@
 						{
 							"name": "Got",
 							"dataSource": "This.actual",
-							"width": 90,
+							"width": 120,
 							"truncateMode": "none",
 							"verticalAlign": "middle",
 							"minWidth": 60
@@ -585,9 +585,9 @@
 				},
 				"RunSelected": {
 					"type": "button",
-					"left": 1024,
+					"left": 644,
 					"top": 768,
-					"width": 168,
+					"width": 176,
 					"height": 26,
 					"text": "Run selected",
 					"method": "ObjectMethods/RunSelected.4dm",
@@ -598,9 +598,9 @@
 				},
 				"RunAll": {
 					"type": "button",
-					"left": 1024,
-					"top": 800,
-					"width": 168,
+					"left": 828,
+					"top": 768,
+					"width": 176,
 					"height": 26,
 					"text": "Run all scenarios",
 					"method": "ObjectMethods/RunAll.4dm",
@@ -611,9 +611,9 @@
 				},
 				"ResetScenarios": {
 					"type": "button",
-					"left": 1024,
-					"top": 832,
-					"width": 168,
+					"left": 1012,
+					"top": 768,
+					"width": 176,
 					"height": 26,
 					"text": "Reset table",
 					"method": "ObjectMethods/ResetScenarios.4dm",
