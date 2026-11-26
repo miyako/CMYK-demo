@@ -503,6 +503,7 @@
 					"columns": [
 						{
 							"name": "Key",
+							"header": { "name": "hdrKey", "text": "Key" },
 							"dataSource": "This.name",
 							"width": 150,
 							"truncateMode": "none",
@@ -511,6 +512,7 @@
 						},
 						{
 							"name": "Value",
+							"header": { "name": "hdrValue", "text": "Value" },
 							"dataSource": "This.value",
 							"width": 380,
 							"truncateMode": "none",
@@ -559,6 +561,7 @@
 					"columns": [
 						{
 							"name": "Scenario",
+							"header": { "name": "hdrScenario", "text": "Scenario" },
 							"dataSource": "This.name",
 							"width": 250,
 							"truncateMode": "none",
@@ -567,6 +570,7 @@
 						},
 						{
 							"name": "Expect",
+							"header": { "name": "hdrExpect", "text": "Expect" },
 							"dataSource": "This.expect",
 							"width": 150,
 							"truncateMode": "none",
@@ -575,6 +579,7 @@
 						},
 						{
 							"name": "Got",
+							"header": { "name": "hdrGot", "text": "Got" },
 							"dataSource": "This.actual",
 							"width": 120,
 							"truncateMode": "none",
