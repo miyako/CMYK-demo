@@ -330,6 +330,8 @@
 					"height": 24,
 					"dataSource": "Form.quality",
 					"dataSourceTypeHint": "integer",
+					"min": 1,
+					"max": 100,
 					"textAlign": "right",
 					"class": "path"
 				},

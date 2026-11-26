@@ -148,7 +148,7 @@ Function chooseSource
 	If (Size of array($selected)>0)
 		$chosen:=$selected{1}
 	End if
-	This.selectSource(File($chosen).path)
+	This.selectSource(File($chosen; fk platform path).path)
 	This.status:="Source selected: "+This._name(This.sourcePath)
 
 Function chooseProfile
@@ -162,7 +162,7 @@ Function chooseProfile
 	If (Size of array($selected)>0)
 		$chosen:=$selected{1}
 	End if
-	This.selectProfile(File($chosen).path)
+	This.selectProfile(File($chosen; fk platform path).path)
 	This.status:="Destination profile selected: "+This._name(This.profilePath)
 
 Function chooseSourceProfile
@@ -176,7 +176,7 @@ Function chooseSourceProfile
 	If (Size of array($selected)>0)
 		$chosen:=$selected{1}
 	End if
-	This.sourceProfilePath:=File($chosen).path
+	This.sourceProfilePath:=File($chosen; fk platform path).path
 	This.status:="Source profile selected: "+This._name(This.sourceProfilePath)
 
 Function clearSourceProfile
@@ -188,7 +188,6 @@ Function clearSourceProfile
 Function inspectSource
 	var $file : 4D.File
 	var $result : Object
-	var $pic : Picture
 	$file:=File(This.sourcePath)
 	If (Not($file.exists))
 		This.sourceInfo:="File not found: "+This.sourcePath
@@ -332,7 +331,7 @@ Function runScenario($index : Integer)->$passed : Boolean
 	var $scenario; $options; $result; $row : Object
 	var $source; $destination; $profile; $sourceProfile : 4D.File
 	var $actual; $extension : Text
-	var $start; $passedCount : Integer
+	var $start : Integer
 
 	$passed:=False
 	If (($index<0) | ($index>=This._scenarios.length))
@@ -381,7 +380,6 @@ Function runScenario($index : Integer)->$passed : Boolean
 	$row.ms:=String(Milliseconds-$start)
 	$row.name:=$scenario.name
 	This._replaceRow($index; $row)
-	This.scenarioRows[$index].actual:=$row.actual
 	This.selectedScenario:=Null
 	return $passed
 
