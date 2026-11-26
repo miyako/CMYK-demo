@@ -2,6 +2,14 @@
    4D CSS uses 4D form-object property names: fill, stroke, fontSize,
    fontWeight, textAlign, borderStyle. Hex colours are #RRGGBB only. */
 
+/* Backdrop colours live here, not in the form JSON: a value written in the
+   form JSON beats CSS and would stay light in dark mode. */
+.backdrop,
+rectangle.backdrop {
+	fill: #F6F7F9;
+	stroke: #DDE2E8;
+}
+
 .title {
 	fontSize: 26;
 	fontWeight: bold;
@@ -72,7 +80,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	#Backdrop {
+	.backdrop,
+	rectangle.backdrop {
 		fill: #12161B;
 		stroke: #232B34;
 	}

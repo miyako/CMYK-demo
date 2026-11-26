@@ -28,8 +28,7 @@
 					"top": 0,
 					"width": 1240,
 					"height": 946,
-					"fill": "#F6F7F9",
-					"stroke": "#DDE2E8",
+					"class": "backdrop",
 					"strokeWidth": 0
 				}
 			}
