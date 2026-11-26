@@ -293,7 +293,7 @@ Function _loadScenarios
 	This._scenarios.push(New object("name"; "Inspect the CMYK output"; "kind"; "inspect"; "source"; "cmyk-chart.tif"; "expect"; "ok"; "note"; "Inspect reports four channels and an embedded CMYK profile."))
 
 Function prepareScenarios
-	var $row : Object
+	var $row; $scenario : Object
 	This.scenarioRows:=New collection()
 	For each ($scenario; This._scenarios)
 		$row:=New object("name"; $scenario.name; "expect"; $scenario.expect; "actual"; "—"; "ms"; "")
@@ -310,7 +310,7 @@ Function runSelected
 	This.status:=This.scenarioSummary
 
 Function runAll
-	var $passed; $failed : Integer
+	var $passed; $failed; $index : Integer
 	$passed:=0
 	$failed:=0
 	For ($index; 0; This._scenarios.length-1)
@@ -332,6 +332,7 @@ Function runScenario($index : Integer)->$passed : Boolean
 	var $source; $destination; $profile; $sourceProfile : 4D.File
 	var $actual; $extension : Text
 	var $start : Integer
+	var $key : Text
 
 	$passed:=False
 	If (($index<0) | ($index>=This._scenarios.length))
@@ -445,6 +446,7 @@ Function _replaceRow($index : Integer; $row : Object)
 	This.scenarioRows:=$rows
 
 Function _indexOfRow($row : Object)->$index : Integer
+	var $i : Integer
 	$index:=-1
 	For ($i; 0; This.scenarioRows.length-1)
 		If (This.scenarioRows[$i]=$row)
@@ -471,6 +473,7 @@ Function _describeConversion($value : Object)->$text : Text
 
 Function _warnings($value : Object)->$text : Text
 	var $lines : Collection
+	var $warning : Variant
 	$text:=""
 	If (Value type($value.warnings)#Is collection)
 		return ""
